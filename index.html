@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Slider • James Chance — Portfolio</title>
+  <meta name="description" content="Portfolio of James (Slider) Chance — Linux builds, hardware projects, and hands-on tech." />
+  <style>
+    :root{
+      --bg:#0f0f0f; --panel:#1e1e1e; --text:#e9e9e9; --muted:#cfcfcf;
+      --fire:#ff4500; --fire2:#ff7a33; --card-shadow:0 4px 12px rgba(0,0,0,.5);
+      --radius:14px; --pad:18px; --maxw:1080px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial}
+    a{color:var(--fire2);text-decoration:none} a:hover{text-decoration:underline}
+    .wrap{max-width:var(--maxw);margin:auto;padding:16px}
+
+    /* Banner */
+    .banner{border-radius:var(--radius);overflow:hidden;margin:16px auto 12px}
+    .banner img{width:100%;display:block}
+
+    /* Ember backdrop for main sections */
+    .ember{
+      position:relative;border-radius:var(--radius);
+      background:
+        radial-gradient(1200px 500px at 50% 100%, rgba(255,80,0,.08), rgba(0,0,0,0) 60%),
+        linear-gradient(180deg, rgba(20,20,20,.92), rgba(12,12,12,.92));
+      padding:18px;
+      animation:ember 7s ease-in-out infinite;
+    }
+    @keyframes ember{
+      0%{box-shadow:0 0 60px rgba(255,80,0,.10) inset}
+      50%{box-shadow:0 0 95px rgba(255,80,0,.18) inset}
+      100%{box-shadow:0 0 60px rgba(255,80,0,.10) inset}
+    }
+    @media (prefers-reduced-motion:reduce){ .ember{animation:none} }
+
+    /* Card grid */
+    .grid{display:flex;flex-wrap:wrap;gap:20px;justify-content:center}
+    .card{
+      width:300px;background:var(--panel);border-radius:var(--radius);
+      overflow:hidden;display:block;color:var(--text);text-decoration:none;
+      box-shadow:var(--card-shadow);transition:transform .25s ease, box-shadow .25s ease, filter .25s ease;
+    }
+    .card:hover{transform:translateY(-6px) scale(1.03);box-shadow:0 0 22px 6px rgba(255,69,0,.55);filter:saturate(1.05)}
+    .thumb{width:100%;height:160px;object-fit:cover;display:block}
+    .body{padding:16px}
+    .title{margin:0 0 10px;color:var(--fire)}
+    .cta{display:inline-block;margin-top:6px;color:var(--fire2);font-weight:700}
+
+    /* Sections */
+    section{margin:28px 0}
+    h2{margin:0 0 12px;color:var(--fire)}
+    .panel{background:var(--panel);border-radius:var(--radius);padding:var(--pad);box-shadow:var(--card-shadow)}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    @media (max-width:720px){ .two-col{grid-template-columns:1fr} .card{width:100%} }
+
+    /* List styling */
+    .list{margin:0;padding-left:18px}
+    .muted{color:var(--muted)}
+
+    footer{margin:32px 0 18px;text-align:center;color:var(--muted);font-size:14px}
+    .hr{height:1px;background:linear-gradient(90deg,transparent,rgba(255,69,0,.35),transparent);margin:22px 0}
+  </style>
+</head>
+<body>
+
+  <main class="wrap">
+    <!-- Banner -->
+    <div class="banner">
+      <img alt="Slider Tech Banner"
+           src="https://github.com/user-attachments/assets/706ff993-1510-49a0-863e-60d0a4fcc08a" />
+    </div>
+
+    <!-- Featured Projects -->
+    <section class="ember">
+      <h2 style="text-align:center;margin-bottom:14px;">Featured Projects</h2>
+      <div class="grid">
+
+        <a class="card" href="https://github.com/jcbd1130/linux-gaming-console" target="_blank" rel="noopener">
+          <img class="thumb" src="https://github.com/user-attachments/assets/706ff993-1510-49a0-863e-60d0a4fcc08a" alt="Linux Gaming Console">
+          <div class="body">
+            <h3 class="title">🎮 Linux Gaming Console</h3>
+            <p>Custom Linux Mint system with RetroArch, Dolphin, Yuzu, PPSSPP, Steam + Proton, and Pegasus frontend.</p>
+            <span class="cta">View on GitHub →</span>
+          </div>
+        </a>
+
+        <a class="card" href="https://github.com/jcbd1130/lamp-pc-build" target="_blank" rel="noopener">
+          <img class="thumb" src="https://github.com/user-attachments/assets/706ff993-1510-49a0-863e-60d0a4fcc08a" alt="Lamp-PC Build">
+          <div class="body">
+            <h3 class="title">💡 Lamp-PC Build</h3>
+            <p>Experimental vertical PC inside a lamp base — compact cooling, quiet operation, bedroom-safe.</p>
+            <span class="cta">View on GitHub →</span>
+          </div>
+        </a>
+
+        <a class="card" href="https://github.com/jcbd1130/farm-equipment-values" target="_blank" rel="noopener">
+          <img class="thumb" src="https://github.com/user-attachments/assets/706ff993-1510-49a0-863e-60d0a4fcc08a" alt="Farm Equipment Appraisal">
+          <div class="body">
+            <h3 class="title">🐄 Farm Equipment Appraisal</h3>
+            <p>Ranch experience → valuation notes for livestock and machinery; auctions, tractors, balers, and more.</p>
+            <span class="cta">View on GitHub →</span>
+          </div>
+        </a>
+
+        <a class="card" href="https://github.com/jcbd1130/digital-music-studio" target="_blank" rel="noopener">
+          <img class="thumb" src="https://github.com/user-attachments/assets/706ff993-1510-49a0-863e-60d0a4fcc08a" alt="Digital Music Studio">
+          <div class="body">
+            <h3 class="title">🎵 Digital Music Studio</h3>
+            <p>Open-source production suite on Linux using LMMS, Ardour, Hydrogen; low-latency JACK/Pulse configs.</p>
+            <span class="cta">View on GitHub →</span>
+          </div>
+        </a>
+
+        <a class="card" href="https://github.com/jcbd1130/Negative-Energy" target="_blank" rel="noopener">
+          <img class="thumb" src="https://raw.githubusercontent.com/jcbd1130/jcbd1130.github.io/main/Negative-Energy/images/card.png" alt="Negative Energy">
+          <div class="body">
+            <h3 class="title">NEGATIVE ENERGY</h3>
+            <p>Atmospheric Resonant Ion Collector — The Way &amp; SHTF Way.</p>
+            <span class="cta">View on GitHub →</span>
+          </div>
+        </a>
+
+      </div> <!-- /.grid -->
+    </section> <!-- /.ember -->
+
+    <!-- About / Skills -->
+    <section>
+      <div class="two-col">
+        <div class="panel">
+          <h2>About</h2>
+          <p>I'm <strong>James (Slider) Chance</strong> — hands-on IT tech, veteran, and builder. I blend old-school mechanical know-how with modern Linux systems: custom PC builds, console-style setups, and practical teaching for my kids.</p>
+          <p class="muted">Comfortable in the terminal, troubleshooting hardware, and optimizing performance on Linux Mint & Ubuntu.</p>
+        </div>
+        <div class="panel">
+          <h2>Skills</h2>
+          <ul class="list">
+            <li><b>OS:</b> Linux Mint, Ubuntu, Windows 10/11</li>
+            <li><b>Hardware:</b> Custom builds, SSD/HDD layouts, debugging components</li>
+            <li><b>Networking:</b> TCP/IP, DHCP, VPN, router configs</li>
+            <li><b>Software:</b> Pegasus, RetroArch, Steam+Proton, LMMS, Ardour</li>
+            <li><b>Mechanical:</b> HVAC systems, small engines, farm equipment operation</li>
+            <li><b>Certs:</b> CompTIA A+, Google IT Support, Security+ (in progress)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="panel">
+      <h2>GitHub Stats & Activity</h2>
+      <div class="two-col">
+        <img alt="GitHub stats" style="width:100%;border-radius:10px"
+             src="https://github-readme-stats.vercel.app/api?username=jcbd1130&show_icons=true&theme=vision-friendly-dark" />
+        <img alt="Top languages" style="width:100%;border-radius:10px"
+             src="https://github-readme-stats.vercel.app/api/top-langs/?username=jcbd1130&layout=compact&theme=vision-friendly-dark" />
+      </div>
+    </section>
+
+    <div class="hr"></div>
+
+    <!-- Contact -->
+    <section class="panel" style="text-align:center">
+      <h2>Contact</h2>
+      <p>📧 <a href="mailto:j.h.chance1130@gmail.com">j.h.chance1130@gmail.com</a> &nbsp;•&nbsp;
+         💻 <a href="https://github.com/jcbd1130" target="_blank" rel="noopener">github.com/jcbd1130</a>
+      </p>
+      <p class="muted">“If I don’t know how to do it yet — I’ll learn it and build it myself.”</p>
+    </section>
+
+    <footer>© <span id="y"></span> James “Slider” Chance</footer>
+  </main>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
