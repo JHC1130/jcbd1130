@@ -1,3 +1,6 @@
+---
+title: something
+---
 # 👋 Hey there, I’m **James “Slider” Chance**
 ### ⚡ Hands-On Linux Builder • Veteran • Tinkerer • Future Cybersecurity Pro
 
