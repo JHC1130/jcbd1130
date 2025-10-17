@@ -13,7 +13,7 @@
       --muted: #cfcfcf;
       --fire: #ff4500;
       --fire2: #ff7a33;
-      --card-shadow: 0 4px 12px rgba(0, 0, 0, .5);
+      --card-shadow: 0 4px 12px rgba(0,0,0,.5);
       --radius: 14px;
       --pad: 18px;
       --maxw: 1080px;
@@ -29,11 +29,9 @@
     a:hover { text-decoration: underline; }
     .wrap { max-width: var(--maxw); margin: auto; padding: 16px; }
 
-    /* Banner */
     .banner { border-radius: var(--radius); overflow: hidden; margin: 16px auto 12px; }
     .banner img { width: 100%; display: block; border-radius: var(--radius); }
 
-    /* Ember effect */
     .ember {
       position: relative;
       border-radius: var(--radius);
@@ -49,7 +47,6 @@
       100% { box-shadow: 0 0 60px rgba(255,80,0,.10) inset; }
     }
 
-    /* Cards */
     .grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
     .card {
       width: 300px;
@@ -72,7 +69,6 @@
     .title { margin: 0 0 10px; color: var(--fire); font-size: 1.1em; }
     .cta { display: inline-block; margin-top: 6px; color: var(--fire2); font-weight: 700; }
 
-    /* Layouts */
     section { margin: 28px 0; }
     h2 { margin: 0 0 12px; color: var(--fire); }
     .panel {
@@ -97,18 +93,15 @@
 <body>
 
   <main class="wrap">
-    <!-- Banner -->
     <div class="banner">
       <img alt="Slider Tech Banner" src="https://github.com/user-attachments/assets/706ff993-1510-49a0-863e-60d0a4fcc08a" />
     </div>
 
-    <!-- Featured Projects -->
     <section class="ember">
       <h2 style="text-align:center;margin-bottom:14px;">Featured Projects</h2>
       <div class="grid">
 
-        <!-- Linux Gaming Console -->
-        <a class="card" href="https://github.com/jcbd1130/linux-gaming-console" target="_blank" rel="noopener">
+        <a class="card" href="https://github.com/JHC1130/linux-gaming-console" target="_blank" rel="noopener">
           <img class="thumb" src="https://github.com/user-attachments/assets/706ff993-1510-49a0-863e-60d0a4fcc08a" alt="Linux Gaming Console">
           <div class="body">
             <h3 class="title">🎮 Linux Gaming Console</h3>
@@ -117,8 +110,7 @@
           </div>
         </a>
 
-        <!-- Lamp-PC Build -->
-        <a class="card" href="https://github.com/jcbd1130/lamp-pc-build" target="_blank" rel="noopener">
+        <a class="card" href="https://github.com/JHC1130/lamp-pc-build" target="_blank" rel="noopener">
           <img class="thumb" src="https://github.com/user-attachments/assets/706ff993-1510-49a0-863e-60d0a4fcc08a" alt="Lamp-PC Build">
           <div class="body">
             <h3 class="title">💡 Lamp-PC Build</h3>
@@ -127,32 +119,11 @@
           </div>
         </a>
 
-        <!-- Farm Equipment Appraisal -->
-        <a class="card" href="https://github.com/jcbd1130/farm-equipment-values" target="_blank" rel="noopener">
-          <img class="thumb" src="https://github.com/user-attachments/assets/706ff993-1510-49a0-863e-60d0a4fcc08a" alt="Farm Equipment Appraisal">
+        <a class="card" href="https://github.com/JHC1130/Negative-Energy" target="_blank" rel="noopener">
+          <img class="thumb" src="https://raw.githubusercontent.com/JHC1130/JHC1130/main/slider-card.png" alt="Negative Energy">
           <div class="body">
-            <h3 class="title">🐄 Farm Equipment Appraisal</h3>
-            <p>Ranch experience → valuation notes for livestock & machinery; auctions, tractors, balers, and more.</p>
-            <span class="cta">View on GitHub →</span>
-          </div>
-        </a>
-
-        <!-- Digital Music Studio -->
-        <a class="card" href="https://github.com/jcbd1130/digital-music-studio" target="_blank" rel="noopener">
-          <img class="thumb" src="https://github.com/user-attachments/assets/706ff993-1510-49a0-863e-60d0a4fcc08a" alt="Digital Music Studio">
-          <div class="body">
-            <h3 class="title">🎵 Digital Music Studio</h3>
-            <p>Linux production setup using LMMS, Ardour, Hydrogen; low-latency JACK/Pulse configs.</p>
-            <span class="cta">View on GitHub →</span>
-          </div>
-        </a>
-
-        <!-- Negative Energy -->
-        <a class="card" href="https://github.com/jcbd1130/Negative-Energy" target="_blank" rel="noopener">
-          <img class="thumb" src="https://raw.githubusercontent.com/jcbd1130/jcbd1130/main/slider-card.png" alt="Negative Energy">
-          <div class="body">
-            <h3 class="title">⚡ NEGATIVE ENERGY</h3>
-            <p>Atmospheric Resonant Ion Collector — The Way &amp; SHTF Way.</p>
+            <h3 class="title">⚡ SLIDER — Negative Energy</h3>
+            <p>Atmospheric Resonant Ion Collector — Tesla-inspired radiant energy design.</p>
             <span class="cta">View on GitHub →</span>
           </div>
         </a>
@@ -160,54 +131,50 @@
       </div>
     </section>
 
-    <!-- About & Skills -->
     <section>
       <div class="two-col">
         <div class="panel">
           <h2>About</h2>
-          <p>I'm <strong>James (Slider) Chance</strong> — hands-on IT tech, veteran, and builder. I blend old-school mechanical know-how with modern Linux systems: custom PC builds, console-style setups, and practical teaching for my kids.</p>
-          <p class="muted">Comfortable in the terminal, troubleshooting hardware, and optimizing performance on Linux Mint & Ubuntu.</p>
+          <p>I'm <strong>James “Slider” Chance</strong> — hands-on IT tech, veteran, and builder.  
+          I blend old-school mechanical know-how with modern Linux systems: custom PC builds, console-style setups, and practical teaching for my kids.</p>
+          <p class="muted">Comfortable in the terminal, troubleshooting hardware, and optimizing Linux performance.</p>
         </div>
         <div class="panel">
           <h2>Skills</h2>
           <ul class="list">
             <li><b>OS:</b> Linux Mint, Ubuntu, Windows 10/11</li>
-            <li><b>Hardware:</b> Custom builds, SSD/HDD layouts, debugging components</li>
+            <li><b>Hardware:</b> Custom builds, SSD/HDD layouts, debugging</li>
             <li><b>Networking:</b> TCP/IP, DHCP, VPN, router configs</li>
             <li><b>Software:</b> Pegasus, RetroArch, Steam+Proton, LMMS, Ardour</li>
-            <li><b>Mechanical:</b> HVAC systems, small engines, farm equipment operation</li>
+            <li><b>Mechanical:</b> HVAC systems, small engines, farm equipment</li>
             <li><b>Certs:</b> CompTIA A+, Google IT Support, Security+ (in progress)</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- GitHub Stats -->
     <section class="panel">
       <h2>GitHub Stats & Activity</h2>
       <div class="two-col">
         <img alt="GitHub stats" style="width:100%;border-radius:10px"
-          src="https://github-readme-stats.vercel.app/api?username=jcbd1130&show_icons=true&theme=vision-friendly-dark" />
+          src="https://github-readme-stats.vercel.app/api?username=JHC1130&show_icons=true&theme=vision-friendly-dark" />
         <img alt="Top languages" style="width:100%;border-radius:10px"
-          src="https://github-readme-stats.vercel.app/api/top-langs/?username=jcbd1130&layout=compact&theme=vision-friendly-dark" />
+          src="https://github-readme-stats.vercel.app/api/top-langs/?username=JHC1130&layout=compact&theme=vision-friendly-dark" />
       </div>
     </section>
 
     <div class="hr"></div>
 
-    <!-- Contact -->
     <section class="panel" style="text-align:center">
       <h2>Contact</h2>
       <p>📧 <a href="mailto:j.h.chance1130@gmail.com">j.h.chance1130@gmail.com</a> &nbsp;•&nbsp;
-         💻 <a href="https://github.com/jcbd1130" target="_blank" rel="noopener">github.com/jcbd1130</a></p>
+         💻 <a href="https://github.com/JHC1130" target="_blank" rel="noopener">github.com/JHC1130</a></p>
       <p class="muted">“If I don’t know how to do it yet — I’ll learn it and build it myself.”</p>
     </section>
 
     <footer>© <span id="y"></span> James “Slider” Chance</footer>
   </main>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
