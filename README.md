@@ -3,7 +3,7 @@
 Welcome! I’m **James “Slider” Chance** — hands-on builder, Linux tinkerer, and dad teaching my kids by making cool stuff.  
 This profile showcases my custom PC builds, Linux systems, and creative open-source projects.
 
-![Slider Banner](https://github.com/user-attachments/assets/706ff993-1510-49a0-863e-60d0a4fcc08a)
+![Slider Banner](https://raw.githubusercontent.com/JHC1130/jcbd1130/refs/heads/main/slider-card.png)
 
 ---
 
