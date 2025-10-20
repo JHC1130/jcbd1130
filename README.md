@@ -1,7 +1,7 @@
 # 🧰 Slider • James Chance — Portfolio
 
 Welcome to my GitHub!  
-I'm **James “Slider” Chance**, a hands-on IT tech, builder, and Linux enthusiast.  
+I'm **James “Slider” Chance**, a hands-on IT tech, builder, game developer and Linux enthusiast.  
 I combine old-school mechanical skills with modern open-source systems — custom PC builds, game consoles, and creative tech projects built from the ground up.
 
 ---
@@ -28,10 +28,10 @@ Includes low-latency JACK/Pulse configs, plugin setups, and project templates.
 Tesla-inspired **Atmospheric Resonant Ion Collector** project —  
 built for off-grid radiant energy experimentation and SHTF scenarios.
 
-### 📱 [Knock Domino](
+### 📱 [Knock Domino](https://github.com/JHC1130/Mobile-Game-App.png)
  Mobile Game App **The project demonstrates mastery of
 game architecture, data management, Unity’s editor system - Scriptable Objects,
-Scene Architecture, Runtime, Logic,Input Systems Debugging, Console Tracking and UI Integration.
+Scene Architecture, Runtime Logic, Input Systems Debugging, Console Tracking and UI Integration.
 
 
 ---
@@ -39,9 +39,9 @@ Scene Architecture, Runtime, Logic,Input Systems Debugging, Console Tracking and
 ## 🧰 Skills
 
 - **Operating Systems:** Linux Mint, Ubuntu, Windows 10/11  
-- **Hardware:** Custom PC builds, SSD/HDD layouts, cooling design, diagnostics  
+- **Hardware:** Custom PC builds, SSD/HDD layouts, cooling design. 
 - **Networking:** TCP/IP, DHCP, VPN setup, router configuration  
-- **Software:** Pegasus, RetroArch, Steam + Proton, LMMS, Ardour  
+- **Software:** Pegasus, RetroArch, Steam + Proton, LMMS, Ardour, Unity   
 - **Mechanical:** HVAC systems, small engines, farm equipment repair  
 - **Certifications:** CompTIA A+ | Google IT Support | Security+ *(in progress)*
 
@@ -50,7 +50,7 @@ Scene Architecture, Runtime, Logic,Input Systems Debugging, Console Tracking and
 ## 🌐 Portfolio Site
 
 View the live site:  
-👉 [**https://jhc1130/jcbd1130.github.io](https://jhc1130/jcbd1130.github.io)
+👉 [**https://jhc1130.github.io/jcbd1130/](https://jhc1130.github.io/jcbd1130/)
 
 ---
 
