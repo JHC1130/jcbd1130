@@ -303,5 +303,15 @@
   </main>
 
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script>
+  const hoverAudio = new Audio('evil-drone-53594.mp3');
+  hoverAudio.volume = 0.15; // gentle
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      try { hoverAudio.currentTime = 0; hoverAudio.play(); } catch(e){}
+    });
+  });
+</script>
+  
 </body>
 </html>
