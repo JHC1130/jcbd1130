@@ -8,7 +8,7 @@ I combine old-school mechanical skills with modern open-source systems — custo
 
 ## 🔥 Featured Projects
 
-### 🎮 [Linux Gaming Console](https://github.com/JHC1130/linux-gaming-console)
+### 🎮 [Linux Gaming Console](https://github.com/JHC1130/jcbd1130/blob/94c88e1a74f4e7821db88fd362bc4264bc5ab2e1/Linux%20Gaming%20Console%20in%20Neon%20Glow.png)
 A custom Linux Mint system turned gaming console —  
 includes RetroArch, Dolphin, Yuzu, PPSSPP, Steam + Proton, and Pegasus frontend.
 
