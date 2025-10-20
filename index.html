@@ -6,106 +6,41 @@
   <title>Slider • James Chance — Portfolio</title>
   <meta name="description" content="Portfolio of James (Slider) Chance — Linux builds, hardware projects, and hands-on tech." />
   <style>
+    /* ============== Theme Vars ============== */
     :root{
-      --bg:#0f0f0f; --panel:#1e1e1e; --panel-2:#232323;
+      --bg:#0f0f0f;
+      --panel:#1e1e1e; --panel-2:#232323;
       --text:#e9e9e9; --muted:#cfcfcf;
       --fire:#ff4500; --fire2:#ff7a33;
-      --card-shadow:0 6px 20px rgba(0,0,0,.45);
+
+      --card-bg:#151617;
+      --neon:#ff2a2a;    /* main neon red */
+      --neon-hot:#ff5500;/* hotter red/orange */
+      --ring0: rgba(255,42,42,.35);
+      --ring1: rgba(255,42,42,.55);
+
+      --card-shadow:0 10px 30px rgba(0,0,0,.45);
       --radius:16px; --pad:20px; --maxw:1120px;
       --gap:22px;
-      /* === Neon Hover Glow (Black + Red) === */
-:root{
-  --card-bg:#151617;
-  --neon:#ff2a2a;         /* main neon red */
-  --neon-hot:#ff5500;     /* hotter red/orange */
-  --ring0: rgba(255,42,42,.35);
-  --ring1: rgba(255,42,42,.55);
-  --shadow: 0 10px 30px rgba(0,0,0,.45);
-}
-
-/* your card base */
-.card{
-  position: relative;               /* required so ::after positions correctly */
-  background: var(--card-bg);
-  border-radius: 14px;
-  box-shadow: 0 0 0 1px rgba(255,42,42,.14), var(--shadow);
-  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
-  will-change: transform, box-shadow, filter;
-  overflow: visible;                 /* don’t clip the glow */
-}
-
-/* make sure inner content sits above the glow layer */
-.card > *{ position: relative; z-index: 1; }
-
-/* the glow layer */
-.card::after{
-  content: "";
-  position: absolute;
-  inset: -2px;                       /* extend beyond edges for a soft bleed */
-  border-radius: inherit;
-  pointer-events: none;
-  z-index: 0;
-
-  /* layered radial glows for depth */
-  background:
-    radial-gradient(120% 70% at 50% 0%,
-      rgba(255,85,0,.30), transparent 60%),
-    radial-gradient(90% 80% at 50% 100%,
-      rgba(255,42,42,.28), transparent 60%);
-
-  filter: blur(14px) saturate(120%);
-  opacity: 0;                        /* off by default */
-  transition: opacity .22s ease, filter .22s ease;
-}
-
-/* hover / focus state */
-.card:hover,
-.card:focus-visible{
-  transform: translateY(-2px);
-  box-shadow:
-    0 0 0 1px var(--ring1),
-    0 0 36px rgba(255,42,42,.22),
-    var(--shadow);
-  filter: brightness(1.02);
-}
-
-.card:hover::after,
-.card:focus-visible::after{
-  opacity: 1;
-  filter: blur(16px) saturate(130%);
-}
-
-/* optional: idle, slow “breathing” glow (applies when you add data-glow="pulse") */
-@keyframes neon-pulse{
-  0%,100%{
-    box-shadow: 0 0 0 1px var(--ring0), 0 0 24px rgba(255,42,42,.12), var(--shadow);
-  }
-  50%{
-    box-shadow: 0 0 0 1px var(--ring1), 0 0 34px rgba(255,85,0,.18), var(--shadow);
-  }
-}
-.card[data-glow="pulse"]{ animation: neon-pulse 3.6s ease-in-out infinite; }
-
-/* accessibility: respect reduced motion */
-@media (prefers-reduced-motion: reduce){
-  .card{ transition: none; }
-  .card[data-glow="pulse"]{ animation: none; }
-}
-
     }
-    *{box-sizing:border-box}
-   body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial}
-    a{color:var(--fire2);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:var(--maxw);margin:auto;padding:18px}}
-  }
-    /* Banner */
-    .banner{border-radius:var(--radius);overflow:hidden;margin:16px auto 14px}
-    .banner img{width:100%;display:block;border-radius:var(--radius)}
 
-    /* Ember backdrop */
+    /* ============== Base ============== */
+    *{box-sizing:border-box}
+    body{
+      margin:0; background:var(--bg); color:var(--text);
+      font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial
+    }
+    a{color:var(--fire2); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:var(--maxw); margin:auto; padding:18px}
+
+    /* ============== Banner ============== */
+    .banner{border-radius:var(--radius); overflow:hidden; margin:16px auto 14px}
+    .banner img{width:100%; display:block; border-radius:var(--radius)}
+
+    /* ============== Ember Backdrop ============== */
     .ember{
-      position:relative;border-radius:var(--radius);
+      position:relative; border-radius:var(--radius);
       background:
         radial-gradient(1200px 500px at 50% 100%, rgba(255,80,0,.10), rgba(0,0,0,0) 60%),
         linear-gradient(180deg, rgba(24,24,24,.96), rgba(16,16,16,.96));
@@ -113,42 +48,106 @@
       box-shadow: inset 0 0 60px rgba(255,80,0,.12);
     }
 
-    /* Card grid */
-    .grid{display:flex;flex-wrap:wrap;gap:var(--gap);justify-content:center}
+    /* ============== Responsive Card Grid ============== */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+      gap:var(--gap);
+      align-items:stretch;
+    }
+
+    /* Card base */
     .card{
-      width:300px;background:var(--panel);border-radius:var(--radius);
-      overflow:hidden;display:block;color:var(--text);
-      box-shadow:var(--card-shadow);transition:transform .25s ease, box-shadow .25s ease, filter .25s ease;}
-    }  
-    .card:hover{transform:translateY(-6px) scale(1.03);box-shadow:0 0 24px 8px rgba(255,69,0,.45);filter:saturate(1.06)}
-    .thumb{width:100%;height:160px;object-fit:cover;display:block;background:#111}
-    .body{padding:16px}
-    .title{margin:0 0 10px;color:var(--fire);font-size:1.1rem}
-    .cta{display:inline-block;margin-top:8px;color:var(--fire2);font-weight:700}
+      position:relative;
+      display:block;
+      background:var(--card-bg);
+      color:var(--text);
+      border-radius:14px;
+      box-shadow: 0 0 0 1px rgba(255,42,42,.14), var(--card-shadow);
+      transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+      will-change: transform, box-shadow, filter;
+      overflow:visible;          /* allow glow */
     }
-    /* Sections / panels */
-    section{margin:30px 0}
-    h2{margin:0 0 14px;color:var(--fire)}
-    .panel{background:var(--panel);border-radius:var(--radius);padding:var(--pad);box-shadow:var(--card-shadow)}
+    .card > *{ position:relative; z-index:1; }
 
-    /* Three-column info row */
+    /* Glow layer */
+    .card::after{
+      content:"";
+      position:absolute; inset:-2px; border-radius:inherit; pointer-events:none; z-index:0;
+      background:
+        radial-gradient(120% 70% at 50% 0%, rgba(255,85,0,.30), transparent 60%),
+        radial-gradient(90% 80% at 50% 100%, rgba(255,42,42,.28), transparent 60%);
+      filter: blur(14px) saturate(120%);
+      opacity:0;
+      transition: opacity .22s ease, filter .22s ease;
+    }
+
+    .card:hover,
+    .card:focus-visible{
+      transform: translateY(-4px);
+      box-shadow:
+        0 0 0 1px var(--ring1),
+        0 0 36px rgba(255,42,42,.22),
+        var(--card-shadow);
+      filter: brightness(1.02);
+    }
+    .card:hover::after,
+    .card:focus-visible::after{
+      opacity:1;
+      filter: blur(16px) saturate(130%);
+    }
+
+    /* Optional idle pulse: add data-glow="pulse" to any .card */
+    @keyframes neon-pulse{
+      0%,100%{ box-shadow: 0 0 0 1px var(--ring0), 0 0 24px rgba(255,42,42,.12), var(--card-shadow); }
+      50%   { box-shadow: 0 0 0 1px var(--ring1), 0 0 34px rgba(255,85,0,.18), var(--card-shadow); }
+    }
+    .card[data-glow="pulse"]{ animation: neon-pulse 3.6s ease-in-out infinite; }
+
+    /* Accessibility */
+    @media (prefers-reduced-motion: reduce){
+      .card{ transition:none }
+      .card[data-glow="pulse"]{ animation:none }
+    }
+
+    /* Card content */
+    .thumb{
+      width:100%;
+      aspect-ratio:16/9;        /* keeps height consistent */
+      object-fit:cover;
+      display:block;
+      background:#111;
+      border-top-left-radius:14px; border-top-right-radius:14px;
+    }
+    .body{ padding:16px }
+    .title{ margin:0 0 10px; color:var(--fire); font-size:1.1rem }
+    .cta{ display:inline-block; margin-top:8px; color:var(--fire2); font-weight:700 }
+
+    /* Tone fix: apply to images that are a bit too light */
+    .tone-match{ filter: brightness(.9) saturate(1.08) contrast(1.05); }
+
+    /* ============== Sections / Panels ============== */
+    section{ margin:30px 0 }
+    h2{ margin:0 0 14px; color:var(--fire) }
+    .panel{ background:var(--panel); border-radius:var(--radius); padding:var(--pad); box-shadow:var(--card-shadow) }
+
+    /* Three-column info row (collapses on small screens) */
     .triple{
-      display:grid;grid-template-columns:1.1fr 1.2fr .9fr;
-      gap:var(--gap);align-items:start;
+      display:grid;
+      grid-template-columns:1.1fr 1.2fr .9fr;
+      gap:var(--gap); align-items:start;
     }
-    /* Inside the Projects-in-detail column */
-    .stack{display:grid;gap:var(--gap)}
-    .subpanel{background:var(--panel-2);border-radius:14px;padding:16px;box-shadow:0 1px 0 rgba(255,255,255,.03) inset}
+    .stack{ display:grid; gap:var(--gap) }
+    .subpanel{ background:var(--panel-2); border-radius:14px; padding:16px; box-shadow:0 1px 0 rgba(255,255,255,.03) inset }
 
-    /* Lists */
-    .list{margin:0;padding-left:18px}
-    .muted{color:var(--muted)}
-    .spacer{height:10px}
+    /* Lists & helpers */
+    .list{ margin:0; padding-left:18px }
+    .muted{ color:var(--muted) }
+    .spacer{ height:10px }
 
     /* Small screens */
-    @media (max-width:820px){
-      .card{width:100%}
-      .triple{grid-template-columns:1fr}
+    @media (max-width: 820px){
+      .triple{ grid-template-columns:1fr }
     }
   </style>
 </head>
@@ -165,9 +164,9 @@
     <section class="ember">
       <h2 style="text-align:center;margin-bottom:16px;">Featured Projects</h2>
       <div class="grid">
-        
+
         <!-- Linux Gaming Console Card -->
-        <a class="card" href="https://github.com/JHC1130/linux-gaming-console" target="_blank" rel="noopener">
+        <a class="card" href="https://github.com/JHC1130/linux-gaming-console" target="_blank" rel="noopener" data-glow="pulse">
           <img class="thumb" src="https://raw.githubusercontent.com/JHC1130/jcbd1130/refs/heads/main/Game-Console.png" alt="Linux Gaming Console">
           <div class="body">
             <h3 class="title">🎮 Linux Gaming Console</h3>
@@ -178,7 +177,7 @@
 
         <!-- Lamp-PC Build -->
         <a class="card" href="https://github.com/JHC1130/lamp-pc-build" target="_blank" rel="noopener">
-          <img class="thumb" src="https://raw.githubusercontent.com/JHC1130/jcbd1130/refs/heads/main/Lamp-Tower Fusion in Fiery Glow.png" alt="Lamp-PC Build">
+          <img class="thumb" src="https://raw.githubusercontent.com/JHC1130/jcbd1130/refs/heads/main/Lamp-Tower%20Fusion%20in%20Fiery%20Glow.png" alt="Lamp-PC Build">
           <div class="body">
             <h3 class="title">💡 Lamp-PC Build</h3>
             <p>Vertical PC hidden in a lamp base — compact cooling, quiet operation, and bedroom-safe.</p>
@@ -215,16 +214,16 @@
             <span class="cta">View on GitHub →</span>
           </div>
         </a>
-        
-        <!-- 🎮 Unity Knock Game Project -->
-          <a class="card" href="https://github.com/JHC1130/knock-game" target="_blank" rel="noopener">
-            <img class="thumb" src="https://raw.githubusercontent.com/JHC1130/jcbd1130/refs/heads/main/Mobile-Game-App.png" alt="Unity Knock Game">
-            <div class="body">
-              <h3 class="title">🎲 Unity Knock Game</h3>
-              <p>A C# Unity project recreating the domino game "Knock" — complete with UI buttons, live scoreboard, and customizable game rules through a ScriptableObject config file.</p>
-              <span class="cta">View on GitHub →</span>
-           </div>
-          </a>
+
+        <!-- Unity Knock Game (tone-match image) -->
+        <a class="card" href="https://github.com/JHC1130/knock-game" target="_blank" rel="noopener">
+          <img class="thumb tone-match" src="https://raw.githubusercontent.com/JHC1130/jcbd1130/refs/heads/main/Mobile-Game-App.png" alt="Unity Knock Game">
+          <div class="body">
+            <h3 class="title">🎲 Unity Knock Game</h3>
+            <p>A C# Unity project recreating the domino game "Knock" — with UI buttons, live scoreboard, and ScriptableObject config.</p>
+            <span class="cta">View on GitHub →</span>
+          </div>
+        </a>
 
       </div>
     </section>
@@ -312,16 +311,17 @@
     </footer>
   </main>
 
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
   <script>
-  const hoverAudio = new Audio('evil-drone-53594.mp3');
-  hoverAudio.volume = 0.15; // gentle
-  document.querySelectorAll('.card').forEach(card => {
-    card.addEventListener('mouseenter', () => {
-      try { hoverAudio.currentTime = 0; hoverAudio.play(); } catch(e){}
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Subtle hover audio once per enter
+    const hoverAudio = new Audio('evil-drone-53594.mp3');
+    hoverAudio.volume = 0.15;
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        try { hoverAudio.currentTime = 0; hoverAudio.play(); } catch(e){}
+      });
     });
-  });
-</script>
-  
+  </script>
 </body>
 </html>
