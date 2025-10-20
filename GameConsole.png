@@ -1,1 +1,47 @@
+<style>
+  body {
+    background-color: #000;        /* Black background */
+    color: #eee;                   /* Light gray text */
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .card {
+    display: block;
+    background-color: #111;        /* Slightly lighter than pure black for contrast */
+    border-radius: 12px;
+    padding: 16px;
+    text-decoration: none;
+    color: #fff;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
+  }
+
+  .card img.thumb {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .card .body {
+    margin-top: 12px;
+  }
+
+  .card .title {
+    color: #4af;                   /* Cyan accent */
+    margin-bottom: 6px;
+  }
+
+  .card .cta {
+    color: #9cf;
+    font-weight: bold;
+  }
+
+  a {
+    color: #4af;
+  }
+</style>
 
