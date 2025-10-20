@@ -28,8 +28,8 @@ Includes low-latency JACK/Pulse configs, plugin setups, and project templates.
 Tesla-inspired **Atmospheric Resonant Ion Collector** project —  
 built for off-grid radiant energy experimentation and SHTF scenarios.
 
-### 📱 
-Knock (Domino) — Mobile Game App **The project demonstrates mastery of
+### 📱 [Knock Domino](
+ Mobile Game App **The project demonstrates mastery of
 game architecture, data management, Unity’s editor system - Scriptable Objects,
 Scene Architecture, Runtime, Logic,Input Systems Debugging, Console Tracking and UI Integration.
 
