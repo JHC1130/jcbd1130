@@ -44,7 +44,7 @@ built for off-grid radiant energy experimentation and SHTF scenarios.
 ## 🌐 Portfolio Site
 
 View the live site:  
-👉 [**https://jhc1130/jhc1130.github.io](https://jhc1130/jhc1130.github.io)
+👉 [**https://jhc1130/jcbd1130.github.io](https://jhc1130/jcbd1130.github.io)
 
 ---
 
